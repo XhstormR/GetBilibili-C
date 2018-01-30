@@ -1,0 +1,40 @@
+#include <winresrc.h>
+
+#define VER_VERSION             0,1,0,0
+#define VER_VERSION_STR         "0.1.0"
+
+1 RT_MANIFEST "./project.xml"
+
+1 VERSIONINFO
+FILEVERSION     VER_VERSION
+PRODUCTVERSION  VER_VERSION
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "FileVersion",      VER_VERSION_STR
+            VALUE "ProductVersion",   VER_VERSION_STR
+            VALUE "CompanyName",      "XhstormR"
+            VALUE "LegalCopyright",   "Copyright (C) 2017-2018 XhstormR"
+            VALUE "ProductName",      "GetBilibili-C"
+            VALUE "InternalName",     "GetBilibili-C"
+            VALUE "FileDescription",  "GetBilibili-C"
+            VALUE "OriginalFilename", "GetBilibili-C.exe"
+        END
+    END
+
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+200 ICON "./project.ico"
+
+201 DIALOG DISCARDABLE 0, 0, 318, 270
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GetBilibili-C"
+FONT 8, "MS Shell Dlg"
+BEGIN
+END
