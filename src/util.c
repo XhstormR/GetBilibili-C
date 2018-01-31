@@ -80,3 +80,8 @@ void printFormatTime(size_t time) {
 
     printf("Time: %I64d:%02I64d:%02I64d\n", h, m % 60, s % 60);
 }
+
+char *EMPTYTONULL(char *str) {
+    if (str == NULL) return NULL;
+    return strcmp(str, "") ? str : NULL;
+}

@@ -1,3 +1,6 @@
+#ifndef WINCTRLS_H
+#define WINCTRLS_H
+
 #include <windows.h>
 
 #define snew(type) (malloc(sizeof(type)))
@@ -58,3 +61,5 @@ void prefslist(struct prefslist *hdl, struct ctlpos *cp, int lines, char *stext,
 int pl_itemfrompt(HWND hwnd, POINT cursor, BOOL scroll);
 int handle_prefslist(struct prefslist *hdl, int *array, int maxmemb, int is_dlmsg, HWND hwnd, WPARAM wParam, LPARAM lParam);
 void progressbar(struct ctlpos *cp, int id);
+
+#endif //WINCTRLS_H

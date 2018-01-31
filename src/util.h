@@ -13,4 +13,6 @@ void printFormatSize(size_t size);
 
 void printFormatTime(size_t time);
 
+char *EMPTYTONULL(char *str);
+
 #endif //GETBILIBILI_C_UTIL_H
