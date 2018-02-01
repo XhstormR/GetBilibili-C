@@ -180,6 +180,14 @@ enum {
     IDC_DELETECHK
 };
 
+static int checkURL(HWND hwnd) {
+    if (conf.download_url) return 0;
+
+    MessageBox(hwnd, "Please provide a download URL", "GetBilibili-C", MB_ICONINFORMATION | MB_OK);
+
+    return -1;
+}
+
 static INT_PTR CALLBACK MainDlgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
     switch (msg) {
         case WM_INITDIALOG:;//空语句
@@ -227,20 +235,14 @@ static INT_PTR CALLBACK MainDlgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM l
             switch (LOWORD(wParam)) {
                 case IDC_GENERATE:
                     if (HIWORD(wParam) != BN_CLICKED) break;
-                    if (!conf.download_url) {
-                        MessageBox(hwnd, "Please provide a download URL", "GetBilibili-C", MB_ICONINFORMATION | MB_OK);
-                        break;
-                    }
+                    if (checkURL(hwnd) != 0) break;
                     init();
                     generateLink();
                     showLink();
                     break;
                 case IDC_DOWNLOAD:
                     if (HIWORD(wParam) != BN_CLICKED) break;
-                    if (!conf.download_url) {
-                        MessageBox(hwnd, "Please provide a download URL", "GetBilibili-C", MB_ICONINFORMATION | MB_OK);
-                        break;
-                    }
+                    if (checkURL(hwnd) != 0) break;
                     init();
                     generateLink();
                     createDirectory();
@@ -252,10 +254,7 @@ static INT_PTR CALLBACK MainDlgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM l
                     break;
                 case IDC_MERGE:
                     if (HIWORD(wParam) != BN_CLICKED) break;
-                    if (!conf.download_url) {
-                        MessageBox(hwnd, "Please provide a download URL", "GetBilibili-C", MB_ICONINFORMATION | MB_OK);
-                        break;
-                    }
+                    if (checkURL(hwnd) != 0) break;
                     init();
                     createDirectory();
                     saveFile();
@@ -281,7 +280,7 @@ static INT_PTR CALLBACK MainDlgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM l
                         p = &conf.download_url;
                     } else if (id == IDC_DIREDIT) {
                         p = &conf.download_dir;
-                    } else if (id == IDC_COOKIEEDIT) {
+                    } else {
                         p = &conf.download_cookie;
                     }
 
