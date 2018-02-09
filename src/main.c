@@ -20,11 +20,11 @@ void init() {
 
     if (conf.app_dir == NULL) conf.app_dir = _getcwd(NULL, 0);
 
-    conf.download_dir = _fullpath(NULL, "GetBilibili", 0);
+    if (conf.download_dir == NULL) conf.download_dir = _fullpath(NULL, "GetBilibili", 0);
 
     cd(getenv("APPDATA"));
 
-    conf.bin_dir = _fullpath(NULL, "GetBilibili", 0);
+    if (conf.bin_dir == NULL) conf.bin_dir = _fullpath(NULL, "GetBilibili", 0);
 
     if (conf.download_url == NULL) return;
 

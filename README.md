@@ -1,13 +1,19 @@
 # GetBilibili-C
 
-## Build
+## Dependence
 
-构建本项目前需安装 Git、CMake、MinGW，生成的可执行文件存放在 `build/bin` 目录下。
+* Git
+* CMake
+* MinGW
+
+## Build
 
 ```
 git clone --recursive https://github.com/XhstormR/GetBilibili-C.git
 make.bat
 ```
+
+构建生成的可执行文件存放在 `build/bin` 目录下。
 
 ## Use
 
