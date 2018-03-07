@@ -2,3 +2,7 @@
 	path = curl
 	url = https://github.com/curl/curl.git
 	branch = master
+[submodule "openssl"]
+	path = openssl
+	url = https://github.com/openssl/openssl.git
+	branch = master

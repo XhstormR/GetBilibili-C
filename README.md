@@ -8,9 +8,10 @@
 
 ## Build
 
-```
-git clone --recursive https://github.com/XhstormR/GetBilibili-C.git
-make.bat
+```bash
+git clone --depth 1 --recurse-submodules --shallow-submodules -j2 https://github.com/XhstormR/GetBilibili-C.git
+cd GetBilibili-C
+./make.bat
 ```
 
 构建生成的可执行文件存放在 `build/bin` 目录下。

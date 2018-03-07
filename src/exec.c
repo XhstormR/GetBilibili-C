@@ -18,7 +18,7 @@ typedef struct {
 
 static const Executor executors[] = {
         {
-                "http://blog.xhstormr.tk/uploads/bin/7zr.exe",
+                "https://blog.xhstormr.tk/uploads/bin/7zr.exe",
                 "7zr.exe",
                 "7zr.exe"
                         " x"

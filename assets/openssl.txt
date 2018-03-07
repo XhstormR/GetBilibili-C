@@ -1,0 +1,8 @@
+https://mirrors.ustc.edu.cn/CPAN/modules/by-module/Pod/Pod-Usage-1.69.tar.gz
+https://mirrors.ustc.edu.cn/CPAN/modules/by-module/Pod/podlators-4.10.tar.gz
+https://mirrors.ustc.edu.cn/CPAN/modules/by-module/Pod/Pod-Simple-3.35.tar.gz
+https://mirrors.ustc.edu.cn/CPAN/modules/by-module/Pod/Pod-Escapes-1.07.tar.gz
+
+https://github.com/Perl/perl5/tree/blead/cpan
+
+GIT/usr/lib/perl5/core_perl/Pod

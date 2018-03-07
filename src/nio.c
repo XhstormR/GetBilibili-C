@@ -26,6 +26,8 @@ CURLcode urlGetToMemory(const char *url, const char *cookie, MemoryStruct *chunk
     curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, USERAGENT);
     curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, WriteMemoryCallback);
     curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, chunk);
+    curl_easy_setopt(curl_handle, CURLOPT_FOLLOWLOCATION, 1);
+    curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYPEER, 0);
 
     CURLcode res = curl_easy_perform(curl_handle);
 
@@ -41,6 +43,8 @@ CURLcode urlGetToFile(const char *url, const char *path) {
 
     curl_easy_setopt(curl_handle, CURLOPT_URL, url);
     curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, USERAGENT);
+    curl_easy_setopt(curl_handle, CURLOPT_FOLLOWLOCATION, 1);
+    curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYPEER, 0);
 
     CURLcode res = CURLE_FAILED_INIT;
     FILE *file;

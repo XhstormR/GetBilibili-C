@@ -9,8 +9,10 @@ add_executable(${APP_NAME} ${SOURCE})
 
 target_link_libraries(${APP_NAME}
         PRIVATE ${CURL_LIBRARIES}
+        PRIVATE ${OPENSSL_LIBRARIES}
         PRIVATE wldap32
         PRIVATE ws2_32
+        PRIVATE crypt32
         )
 target_include_directories(${APP_NAME}
         PRIVATE ${CURL_INCLUDE_DIRS}
